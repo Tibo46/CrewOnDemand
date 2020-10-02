@@ -31,6 +31,10 @@ namespace CrewOnDemand.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> Book([FromBody] BookingRequest bookingRequest)
         {
+            if(bookingRequest == null) {
+                return BadRequest("All parameters are required");
+            }
+
             var bookingStatus = await _crewOnDemandService.BookPilot(bookingRequest.DepDateTime, bookingRequest.ReturnDateTime, bookingRequest.PilotId);
 
             switch (bookingStatus)

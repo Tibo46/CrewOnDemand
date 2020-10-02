@@ -44,6 +44,16 @@ namespace CrewOnDemand_UnitTests.Controllers
         }
 
         [Fact]
+        public async void Book_Returns_BadRequest_When_ParametersMissing()
+        {
+            var result = await _sut.Book(null);
+
+            var status = result as BadRequestObjectResult;
+
+            Assert.Equal(400, status.StatusCode);
+        }
+
+        [Fact]
         public async void Book_Returns_Created_When_BookingIsComplete()
         {
             var depDateTime = new DateTime(1984, 08, 09);
