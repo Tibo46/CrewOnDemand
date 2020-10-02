@@ -1,4 +1,4 @@
-# PERSON API
+# CrewOnDemand API
 
 This API allows you to get the first available pilot for a given departure and return date on a specific location.
 Once you have a pilot id, you can book a flight.
