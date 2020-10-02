@@ -24,7 +24,7 @@ namespace CrewOnDemand.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Pilot>> Availability([FromQuery] AvailabilitySearch search)
         {
-            if (search == null)
+            if (search == null || search.Location == null || search.DepDateTime == null || search.ReturnDateTime == null)
             {
                 return BadRequest("All parameters are required");
             }

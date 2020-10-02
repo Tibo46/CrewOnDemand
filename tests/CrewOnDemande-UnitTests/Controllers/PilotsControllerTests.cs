@@ -44,9 +44,22 @@ namespace CrewOnDemand_UnitTests.Controllers
             Assert.Equal(400, status.StatusCode);
         }
 
-
         [Fact]
         public async void Availability_Returns_BadRequest_When_ParametersMissing()
+        {
+            var result = await _sut.Availability(new AvailabilitySearch
+            {
+                DepDateTime = new DateTime(2020, 1, 1),
+                ReturnDateTime = new DateTime(2020, 1, 2)
+            });
+
+            var status = result.Result as BadRequestObjectResult;
+
+            Assert.Equal(400, status.StatusCode);
+        }
+
+        [Fact]
+        public async void Availability_Returns_BadRequest_When_ParametersNull()
         {
             var result = await _sut.Availability(null);
 
