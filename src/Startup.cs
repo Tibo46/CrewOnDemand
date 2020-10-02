@@ -1,6 +1,7 @@
 using CrewOnDemand.Database;
 using CrewOnDemand.Events;
 using CrewOnDemand.Repositories;
+using CrewOnDemand.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -38,6 +39,7 @@ namespace CrewOnDemand
 
             services.AddScoped<ICrewOnDemandRepository, CrewOnDemandRepository>();
             services.AddScoped<IBookingCreatedPublisher, BookingCreatedPublisher>();
+            services.AddScoped<ICrewOnDemandService, CrewOnDemandService>();
 
             services.AddSwaggerGen(c =>
             {
