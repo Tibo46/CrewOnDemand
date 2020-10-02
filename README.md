@@ -1,12 +1,19 @@
 # CrewOnDemand API
 
 This API allows you to get the first available pilot for a given departure and return date on a specific location.
+
 Once you have a pilot id, you can book a flight.
+
 You can find a hexagonal diagram of the project in this repository.
+
 The swagger page is accessible from /swagger/index.html
+
 It is build in dotnet core 3.1 and uses Entity Framework Core.
+
 The tests are using xUnit.
+
 Follow this readme to setup the project and run it from your machine.
+
 Note: this was only tested on a Windows machine, but it should work the same way on Mac.
 
 ## PREREQUISITE
